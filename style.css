@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*added so that size of box do not change but the size of content change*/
+}
+
+
+#wrapper{
+    height: 100vh; /* height equal to the height of view port */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    height: 100%; /*means equal to the height of viewport*/
+    max-width: 1200px; /*max width height of box increase upto only 1200px otherwise overflow */
+    margin: 0 auto; /*margin : 0 auto is used to aling the content to the center as the margin from both left and right are equal */
+    padding: 20px;
+
+}
+
+.container h1{      /* we can also write h1 only*/
+margin: 20px 100px; /* 20px represent top and bottom and 0 represent left and right*/
+text-align: center;
+
+font-size: 3rem;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+letter-spacing: 2px;
+text-shadow:4px 4px 4px rgba(0, 0, 0, 0.489);
+}
+
+.gallery{
+    display:flex;
+    flex-wrap: wrap; /* by this the content will not be in horizontal direction*/
+    justify-content: space-between;
+}
+
+.card{
+    width: 32%;
+    height: 320px;
+    position:relative;
+    margin-bottom: 20px;
+    border-radius: 10px; /*to round the edges of the images*/
+    overflow:hidden;
+}
+
+.card img{
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+
+}
+
+.card:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.5s;
+}
+
+.card:hover img {                  /*mtlb jb card pe hover karenge to image ko kya hoga*/
+    filter:grayscale(0%);
+}
+
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    opacity: 0; /*transparency 0 */
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg , rgba(0 ,0,0,0.5) 0% , rgba (255 , 255 ,255,255));
+  transition: 0.5s;
+}
+
+.card:hover figcaption{
+    opacity: 1;/*now it is can be seen*/
+    transform: scale(1.03);
+    
+}
